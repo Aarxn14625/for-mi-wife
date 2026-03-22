@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Para mi niña 💛</title>
+<title>para mi niña 💖💛 title>
 
 <style>
 body {
@@ -16,12 +16,10 @@ body {
   overflow: hidden;
 }
 
-/* TEXTO */
 h1 {
   position: absolute;
   top: 30px;
   color: #a67c00;
-  animation: fade 2s ease-in-out;
 }
 
 p {
@@ -48,7 +46,7 @@ p {
   transform-origin: bottom;
 }
 
-/* FLORES */
+/* FLOR */
 .flor {
   position: absolute;
   width: 60px;
@@ -56,67 +54,70 @@ p {
   animation: flotar 3s infinite ease-in-out;
 }
 
-.petalo {
-  width: 25px;
-  height: 25px;
-  background: yellow;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.petalo:nth-child(1) { top: 0; left: 17px; }
-.petalo:nth-child(2) { top: 17px; left: 0; }
-.petalo:nth-child(3) { top: 17px; right: 0; }
-.petalo:nth-child(4) { bottom: 0; left: 17px; }
-
+/* CENTRO */
 .centro {
-  width: 25px;
-  height: 25px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
   background: orange;
   border-radius: 50%;
-  position: absolute;
-  top: 17px;
-  left: 17px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
-/* POSICIONES */
+/* PETALOS (AHORA BIEN POSICIONADOS) */
+.petalo {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: yellow;
+  border-radius: 50%;
+}
+
+/* alrededor del centro */
+.p1 { top: 0; left: 50%; transform: translateX(-50%); }
+.p2 { bottom: 0; left: 50%; transform: translateX(-50%); }
+.p3 { left: 0; top: 50%; transform: translateY(-50%); }
+.p4 { right: 0; top: 50%; transform: translateY(-50%); }
+
+.p5 { top: 10%; left: 10%; }
+.p6 { top: 10%; right: 10%; }
+.p7 { bottom: 10%; left: 10%; }
+.p8 { bottom: 10%; right: 10%; }
+
+/* POSICIONES FLORES */
 .f1 { top: 0; left: 20px; }
 .f2 { top: 20px; left: 80px; }
 .f3 { top: 40px; left: 0; }
 
-/* ANIMACIONES */
+/* ANIMACION */
 @keyframes flotar {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* PETALOS CAYENDO */
+.petalo-caida {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: yellow;
+  border-radius: 50%;
+  animation: caer linear infinite;
 }
 
 @keyframes caer {
   0% { transform: translateY(-100px); opacity: 0; }
   100% { transform: translateY(100vh); opacity: 1; }
 }
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* PETALOS QUE CAEN */
-.petalo-caida {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: yellow;
-  border-radius: 50%;
-  top: -10px;
-  animation: caer linear infinite;
-}
-
 </style>
 </head>
 
 <body>
 
-<h1>toma mi niña preciosa aun que sea tarde 💛</h1>
+<h1>toma mi niña preciosa aun que sea tarde 💛 </h1>
 
 <div class="ramo">
   <div class="tallo" style="transform: rotate(-10deg);"></div>
@@ -124,39 +125,55 @@ p {
   <div class="tallo"></div>
 
   <div class="flor f1">
-    <div class="petalo"></div><div class="petalo"></div>
-    <div class="petalo"></div><div class="petalo"></div>
+    <div class="petalo p1"></div>
+    <div class="petalo p2"></div>
+    <div class="petalo p3"></div>
+    <div class="petalo p4"></div>
+    <div class="petalo p5"></div>
+    <div class="petalo p6"></div>
+    <div class="petalo p7"></div>
+    <div class="petalo p8"></div>
     <div class="centro"></div>
   </div>
 
   <div class="flor f2">
-    <div class="petalo"></div><div class="petalo"></div>
-    <div class="petalo"></div><div class="petalo"></div>
+    <div class="petalo p1"></div>
+    <div class="petalo p2"></div>
+    <div class="petalo p3"></div>
+    <div class="petalo p4"></div>
+    <div class="petalo p5"></div>
+    <div class="petalo p6"></div>
+    <div class="petalo p7"></div>
+    <div class="petalo p8"></div>
     <div class="centro"></div>
   </div>
 
   <div class="flor f3">
-    <div class="petalo"></div><div class="petalo"></div>
-    <div class="petalo"></div><div class="petalo"></div>
+    <div class="petalo p1"></div>
+    <div class="petalo p2"></div>
+    <div class="petalo p3"></div>
+    <div class="petalo p4"></div>
+    <div class="petalo p5"></div>
+    <div class="petalo p6"></div>
+    <div class="petalo p7"></div>
+    <div class="petalo p8"></div>
     <div class="centro"></div>
   </div>
 </div>
 
-<p>para la personita que me alegra los dias <3🌼</p>
+<p>para la personita que me alegra los dias <3🌼 </p>
 
-<!-- MUSICA -->
 <audio autoplay loop>
   <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b4f7c6b7.mp3?filename=soft-piano-ambient-110624.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-// crear pétalos cayendo
-for (let i = 0; i < 20; i++) {
-  let petalo = document.createElement("div");
-  petalo.className = "petalo-caida";
-  petalo.style.left = Math.random() * 100 + "vw";
-  petalo.style.animationDuration = (3 + Math.random() * 5) + "s";
-  document.body.appendChild(petalo);
+for (let i = 0; i < 25; i++) {
+  let p = document.createElement("div");
+  p.className = "petalo-caida";
+  p.style.left = Math.random() * 100 + "vw";
+  p.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(p);
 }
 </script>
 
