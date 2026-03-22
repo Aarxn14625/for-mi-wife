@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>toma mi niña preciosa aun que sea tarde 💛</title>
+<title>Para Rachel 💛</title>
 
 <style>
 body {
@@ -16,10 +16,18 @@ body {
   overflow: hidden;
 }
 
+/* TEXTO */
 h1 {
   position: absolute;
-  top: 40px;
+  top: 30px;
   color: #a67c00;
+  animation: fade 2s ease-in-out;
+}
+
+p {
+  position: absolute;
+  bottom: 30px;
+  color: #7a5c00;
 }
 
 /* RAMO */
@@ -76,58 +84,81 @@ h1 {
 .f2 { top: 20px; left: 80px; }
 .f3 { top: 40px; left: 0; }
 
-/* ANIMACIÓN */
+/* ANIMACIONES */
 @keyframes flotar {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
 
-p {
-  position: absolute;
-  bottom: 40px;
-  color: #7a5c00;
-  text-align: center;
+@keyframes caer {
+  0% { transform: translateY(-100px); opacity: 0; }
+  100% { transform: translateY(100vh); opacity: 1; }
 }
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* PETALOS QUE CAEN */
+.petalo-caida {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: yellow;
+  border-radius: 50%;
+  top: -10px;
+  animation: caer linear infinite;
+}
+
 </style>
 </head>
 
 <body>
 
-<h1>para la personita que me alegra los dias <3🌼</h1>
+<h1>toma mi niña preciosa aun que sea tarde 💛</h1>
 
 <div class="ramo">
-
   <div class="tallo" style="transform: rotate(-10deg);"></div>
   <div class="tallo" style="transform: rotate(10deg);"></div>
   <div class="tallo"></div>
 
   <div class="flor f1">
-    <div class="petalo"></div>
-    <div class="petalo"></div>
-    <div class="petalo"></div>
-    <div class="petalo"></div>
+    <div class="petalo"></div><div class="petalo"></div>
+    <div class="petalo"></div><div class="petalo"></div>
     <div class="centro"></div>
   </div>
 
   <div class="flor f2">
-    <div class="petalo"></div>
-    <div class="petalo"></div>
-    <div class="petalo"></div>
-    <div class="petalo"></div>
+    <div class="petalo"></div><div class="petalo"></div>
+    <div class="petalo"></div><div class="petalo"></div>
     <div class="centro"></div>
   </div>
 
   <div class="flor f3">
-    <div class="petalo"></div>
-    <div class="petalo"></div>
-    <div class="petalo"></div>
-    <div class="petalo"></div>
+    <div class="petalo"></div><div class="petalo"></div>
+    <div class="petalo"></div><div class="petalo"></div>
     <div class="centro"></div>
   </div>
-
 </div>
 
-<p>Estas flores son para vos 🌼💛</p>
+<p>para la personita que me alegra los dias <3🌼</p>
+
+<!-- MUSICA -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8b4f7c6b7.mp3?filename=soft-piano-ambient-110624.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// crear pétalos cayendo
+for (let i = 0; i < 20; i++) {
+  let petalo = document.createElement("div");
+  petalo.className = "petalo-caida";
+  petalo.style.left = Math.random() * 100 + "vw";
+  petalo.style.animationDuration = (3 + Math.random() * 5) + "s";
+  document.body.appendChild(petalo);
+}
+</script>
 
 </body>
 </html>
